@@ -27,3 +27,5 @@ You can see this by running PHPStan and inspecting the `modules/Module.php` file
 $ cat modules/Module.php
 $ ./vendor/bin/phpstan --memory-limit=-1 analyse
 ```
+
+This can be seen in this simplified PHPStan demo, https://phpstan.org/r/f72190d9-a040-47c9-98e2-f2d07508e518
