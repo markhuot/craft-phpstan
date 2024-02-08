@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: news
+name: News
+propagationMethod: all
+siteSettings:
+  d7a6c545-e3ed-4e53-998b-5c9a3b4bda08: # Craft and PHPStan
+    enabledByDefault: true
+    hasUrls: true
+    template: news/_entry
+    uriFormat: 'news/{slug}'
+type: channel

@@ -1,0 +1,19 @@
+columnSuffix: lhypetya
+contentColumnType: text
+fieldGroup: 307bdb96-1b2c-4e82-b929-e111a7ca414f # Common
+handle: sampleTextField
+instructions: null
+name: 'Sample Text Field'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

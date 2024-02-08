@@ -1,0 +1,25 @@
+dateModified: 1707356165
+email:
+  fromEmail: mark@markhuot.com
+  fromName: 'Craft and PHPStan'
+  transportType: craft\mail\transportadapters\Sendmail
+meta:
+  __names__:
+    5b25a878-0cda-48df-80b8-bf24b1ee8410: 'Sample Text Field' # Sample Text Field
+    307bdb96-1b2c-4e82-b929-e111a7ca414f: Common # Common
+    4251a17a-0f5d-44d0-8ede-5ca5ac9342a3: News # News
+    aa104413-81f8-46b2-a7e1-baaab0739b15: Default # Default
+    d7a6c545-e3ed-4e53-998b-5c9a3b4bda08: 'Craft and PHPStan' # Craft and PHPStan
+    fc5d2fc9-0deb-405c-8aad-89846ecaf3e2: 'Craft and PHPStan' # Craft and PHPStan
+system:
+  edition: solo
+  live: true
+  name: 'Craft and PHPStan'
+  schemaVersion: 4.5.3.0
+  timeZone: America/Los_Angeles
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true
