@@ -4,7 +4,6 @@ on:
 jobs:
   phpstan:
     env:
-      WEBROOT: ${{ github.workspace }}
       CRAFT_APP_ID: CraftCMS--886266cf-706e-4a9f-854c-45362102e8ef
       CRAFT_ENVIRONMENT: production
       CRAFT_SECURITY_KEY: tmp
@@ -15,8 +14,6 @@ jobs:
       CRAFT_DB_USER: root
       CRAFT_DB_PASSWORD: root
       CRAFT_DB_TABLE_PREFIX: craft_
-      CRAFT_CP_TRIGGER: admin
-      CRAFT_QUEUE_DRIVER: sync
     services:
       mysql:
         image: mysql
@@ -42,8 +39,6 @@ jobs:
         with:
           path: vendor
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-      - name: Copy over .env
-        run: cp .env.example.dev .env
       - name: Install PHP dependencies
         run: composer install --prefer-dist --no-progress --no-ansi
         if: steps.composer-cache.outputs.cache-hit != 'true'
@@ -53,16 +48,12 @@ jobs:
         with:
           path: dump.sql
           key: ${{ runner.os }}-db-${{ hashFiles('config/project/project.yaml', 'migrations/*.php') }}
-      - name: Wait for MySQL
-        run: until mysqladmin ping -h 127.0.0.1 -u root -proot; do sleep 1; done
       - name: Restore database
         if: steps.db-cache.outputs.cache-hit == 'true'
         run: mysql -h 127.0.0.1 -u root -proot phpstan < dump.sql
       - name: Install Craft
         if: steps.db-cache.outputs.cache-hit != 'true'
         run: |
-          cat .env
-          env | grep CRAFT
           ./craft install --interactive=0 --username=michael@bluth.com --email=michael@bluth.com --password=secret --siteName="PHPStan Test" --siteUrl=http://localhost:8080 --language=en-US
           ./craft migrate/all --interactive=0
           mysqldump -h 127.0.0.1 -u root -proot phpstan > dump.sql
