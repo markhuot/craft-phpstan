@@ -62,6 +62,7 @@ jobs:
         if: steps.db-cache.outputs.cache-hit != 'true'
         run: |
           cat .env
+          env | grep CRAFT
           ./craft install --interactive=0 --username=michael@bluth.com --email=michael@bluth.com --password=secret --siteName="PHPStan Test" --siteUrl=http://localhost:8080 --language=en-US
           ./craft migrate/all --interactive=0
           mysqldump -h 127.0.0.1 -u root -proot phpstan > dump.sql
