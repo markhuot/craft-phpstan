@@ -6,8 +6,8 @@ like to employ to make things more strongly typed. They are,
 1. Include your PHPStan stubs inside a `.phpstorm.meta.php` directory. This way the stubs are also accessible
    to PHPStorm and you get some really nice autocomplete.
 2. Use a dynamic `include` from `phpstan.neon` so it can go out and find the non-PSR-4 named
-   `CustomFieldBehavior`. This is done with the following include, `includes: [phpstan-includes.php]`. Then,
-   inside that include file you can search for and set a dynamic `parameters.scanFiles` to the filepath
+   `CustomFieldBehavior`. This is done [with the following include](phpstan.neon), `includes: [phpstan-includes.php]`. Then,
+   [inside that include file](phpstan-includes.php) you can search for and set a dynamic `parameters.scanFiles` to the filepath
    of the custom field definition.
 
 With these in place you get native `$entry->customField` autocomplete with strong types when getting the
