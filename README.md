@@ -28,4 +28,26 @@ $ cat modules/Module.php
 $ ./vendor/bin/phpstan --memory-limit=-1 analyse
 ```
 
-This can be seen in this simplified PHPStan demo, https://phpstan.org/r/f72190d9-a040-47c9-98e2-f2d07508e518
+This can be seen in this simplified PHPStan demo, https://phpstan.org/r/f72190d9-a040-47c9-98e2-f2d07508e518. It shows
+that the `static` return from a `@mixin` stays on the defined class, not the calling parent.
+
+```php
+<?php declare(strict_types = 1);
+
+/**
+ * @method static fieldHandle(string $value)
+ */
+class CustomFieldBehavior {
+	
+}
+
+/**
+ * @mixin CustomFieldBehavior
+ */
+class EntryQuery {
+	
+}
+
+$query = (new EntryQuery())->fieldHandle('foo');
+\PHPStan\dumpType($query); // should be EntryQuery, but is CustomFieldBehavior
+```
