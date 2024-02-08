@@ -14,8 +14,8 @@ With these in place you get native `$entry->customField` autocomplete with stron
 custom field.
 
 However, you do _not_ get strong types when querying the custom field. For example, this `$query` is not
-typed as an `EntryQuery`. Instead it is typed as a `CustomFieldBehavior` because the types are marked as
-`static`.
+typed as an `EntryQuery`. Instead it is typed as a `CustomFieldBehavior` because the return types of the
+custom field methods are marked as `static`, referencing back to the behavior, not the underlying query.
 
 ```php
 $query = craft\elements\Entry::find()->customField('value')
