@@ -20,3 +20,10 @@ typed as an `EntryQuery`. Instead it is typed as a `CustomFieldBehavior` because
 ```php
 $query = craft\elements\Entry::find()->customField('value')
 ```
+
+You can see this by running PHPStan and inspecting the `modules/Module.php` file.
+
+```bash
+$ cat modules/Module.php
+$ ./vendor/bin/phpstan --memory-limit=-1 analyse
+```

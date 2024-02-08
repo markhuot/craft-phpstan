@@ -5,9 +5,6 @@ jobs:
   phpstan:
     env:
       WEBROOT: ${{ github.workspace }}
-      VIRTUAL_HOST: localhost:8080
-      API_VIRTUAL_HOST: localhost:8080
-      CP_VIRTUAL_HOST: localhost:8080
       CRAFT_APP_ID: CraftCMS--886266cf-706e-4a9f-854c-45362102e8ef
       CRAFT_ENVIRONMENT: production
       CRAFT_SECURITY_KEY: tmp
@@ -59,7 +56,7 @@ jobs:
       - name: Install Craft
         if: steps.db-cache.outputs.cache-hit != 'true'
         run: |
-          ./craft install --username=michael@bluth.com --email=michael@bluth.com --password=secret --siteName="PHPStan Test" --siteUrl=http://localhost:8080 --language=en-US
+          ./craft install --interactive=0 --username=michael@bluth.com --email=michael@bluth.com --password=secret --siteName="PHPStan Test" --siteUrl=http://localhost:8080 --language=en-US
           ./craft migrate/all --interactive=0
           mysqldump -h 127.0.0.1 -u root -proot phpstan > dump.sql
       - name: Run PHPStan
