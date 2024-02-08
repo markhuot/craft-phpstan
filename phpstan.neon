@@ -1,19 +1,8 @@
 includes:
     - phpstan-includes.php
+    - vendor/craftcms/phpstan/phpstan.neon
 
 parameters:
     level: max
     paths:
         - modules
-    scanFiles:
-        - .phpstorm.meta.php/yii.php
-        - .phpstorm.meta.php/craft.php
-        - vendor/yiisoft/yii2/Yii.php
-        - vendor/craftcms/cms/src/Craft.php
-    earlyTerminatingMethodCalls:
-        Craft:
-            - dd
-        yii\base\Application:
-            - end
-        yii\base\ErrorHandler:
-            - convertExceptionToError

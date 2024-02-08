@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0d1a8a9c03ef5ca79aa18fee4030fca9",
+    "content-hash": "76dd71729c8a9c7d9f9426c59eafe000",
     "packages": [
         {
             "name": "cebe/markdown",
@@ -879,6 +879,33 @@
                 "source": "https://github.com/craftcms/cms"
             },
             "time": "2024-02-07T22:39:35+00:00"
+        },
+        {
+            "name": "craftcms/phpstan",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/phpstan.git",
+                "reference": "b61bba102b5ec8599406e6e29a28a20c915a6abc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/craftcms/phpstan/zipball/b61bba102b5ec8599406e6e29a28a20c915a6abc",
+                "reference": "b61bba102b5ec8599406e6e29a28a20c915a6abc",
+                "shasum": ""
+            },
+            "require": {
+                "phpstan/phpstan": "^1.4.6"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "PHPStan configuration for Craft CMS projects",
+            "support": {
+                "issues": "https://github.com/craftcms/phpstan/issues",
+                "source": "https://github.com/craftcms/phpstan/tree/main"
+            },
+            "time": "2022-04-12T20:50:18+00:00"
         },
         {
             "name": "craftcms/plugin-installer",
@@ -2725,6 +2752,68 @@
                 "source": "https://github.com/phpstan/phpdoc-parser/tree/1.25.0"
             },
             "time": "2024-01-04T17:06:16+00:00"
+        },
+        {
+            "name": "phpstan/phpstan",
+            "version": "1.10.57",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpstan/phpstan.git",
+                "reference": "1627b1d03446904aaa77593f370c5201d2ecc34e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/1627b1d03446904aaa77593f370c5201d2ecc34e",
+                "reference": "1627b1d03446904aaa77593f370c5201d2ecc34e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2|^8.0"
+            },
+            "conflict": {
+                "phpstan/phpstan-shim": "*"
+            },
+            "bin": [
+                "phpstan",
+                "phpstan.phar"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHPStan - PHP Static Analysis Tool",
+            "keywords": [
+                "dev",
+                "static analysis"
+            ],
+            "support": {
+                "docs": "https://phpstan.org/user-guide/getting-started",
+                "forum": "https://github.com/phpstan/phpstan/discussions",
+                "issues": "https://github.com/phpstan/phpstan/issues",
+                "security": "https://github.com/phpstan/phpstan/security/policy",
+                "source": "https://github.com/phpstan/phpstan-src"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/ondrejmirtes",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/phpstan",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2024-01-24T11:51:34+00:00"
         },
         {
             "name": "pixelandtonic/imagine",
@@ -7230,68 +7319,6 @@
             "time": "2023-12-10T21:03:43+00:00"
         },
         {
-            "name": "phpstan/phpstan",
-            "version": "1.10.57",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "1627b1d03446904aaa77593f370c5201d2ecc34e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/1627b1d03446904aaa77593f370c5201d2ecc34e",
-                "reference": "1627b1d03446904aaa77593f370c5201d2ecc34e",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.2|^8.0"
-            },
-            "conflict": {
-                "phpstan/phpstan-shim": "*"
-            },
-            "bin": [
-                "phpstan",
-                "phpstan.phar"
-            ],
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "bootstrap.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "PHPStan - PHP Static Analysis Tool",
-            "keywords": [
-                "dev",
-                "static analysis"
-            ],
-            "support": {
-                "docs": "https://phpstan.org/user-guide/getting-started",
-                "forum": "https://github.com/phpstan/phpstan/discussions",
-                "issues": "https://github.com/phpstan/phpstan/issues",
-                "security": "https://github.com/phpstan/phpstan/security/policy",
-                "source": "https://github.com/phpstan/phpstan-src"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/ondrejmirtes",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/phpstan",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2024-01-24T11:51:34+00:00"
-        },
-        {
             "name": "psy/psysh",
             "version": "v0.11.22",
             "source": {
@@ -7439,13 +7466,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "craftcms/phpstan": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "platform-overrides": {
-        "php": "8.0.2"
-    },
     "plugin-api-version": "2.6.0"
 }

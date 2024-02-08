@@ -20,6 +20,7 @@
   },
   "require": {
     "craftcms/cms": "^4.4.0",
+    "craftcms/phpstan": "dev-main",
     "vlucas/phpdotenv": "^5.4.0"
   },
   "require-dev": {
