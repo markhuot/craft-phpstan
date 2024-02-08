@@ -20,8 +20,8 @@ class Module extends \yii\base\Module
             \PHPStan\dumpType($entry->sampleTextField);
 
             // Incorrectly returns a type of CustomFieldBehavior because the method is typed
-            // with a return type of `static` on the behavior. It should, instead, return the
-            // query object.
+            // with a return type of `static` on the behavior and PHPStan doesn't late static
+            // bind the behavior so we don't get the calling class, we get the defined class.
             \PHPStan\dumpType(Entry::find()->sampleTextField('test'));
 
         }
